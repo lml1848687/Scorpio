@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/lml1848687/VUE-Learning/issues"
   },
-  "homepage": "https://github.com/lml1848687/VUE-Learning#readme"
+  "homepage": "https://github.com/lml1848687/VUE-Learning#readme",
+  "dependencies": {
+    "vue": "^2.5.17"
+  }
 }
