@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/lml1848687/VUE-Learning#readme",
   "dependencies": {
+    "node-sass": "^4.10.0",
     "vue": "^2.5.17",
     "vue-hot-reload-api": "^2.3.1"
   },

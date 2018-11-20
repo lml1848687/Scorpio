@@ -11334,14 +11334,14 @@ exports.default = void 0;
 //
 var _default = {};
 exports.default = _default;
-        var $ddf899 = exports.default || module.exports;
+        var $e689de = exports.default || module.exports;
       
-      if (typeof $ddf899 === 'function') {
-        $ddf899 = $ddf899.options;
+      if (typeof $e689de === 'function') {
+        $e689de = $e689de.options;
       }
     
         /* template */
-        Object.assign($ddf899, (function () {
+        Object.assign($e689de, (function () {
           var render = function() {
   var _vm = this
   var _h = _vm.$createElement
@@ -11378,9 +11378,9 @@ render._withStripped = true
         if (api.compatible) {
           module.hot.accept();
           if (!module.hot.data) {
-            api.createRecord('$ddf899', $ddf899);
+            api.createRecord('$e689de', $e689de);
           } else {
-            api.reload('$ddf899', $ddf899);
+            api.reload('$e689de', $e689de);
           }
         }
 
@@ -11432,7 +11432,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "3557" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "5454" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
