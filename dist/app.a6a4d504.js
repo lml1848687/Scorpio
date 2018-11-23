@@ -11332,6 +11332,8 @@ exports.default = void 0;
 //
 //
 //
+//
+//
 var _default = {};
 exports.default = _default;
         var $e689de = exports.default || module.exports;
@@ -11346,19 +11348,12 @@ exports.default = _default;
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", [
+    _c("button", { staticClass: "g-button" }, [_vm._t("default")], 2),
+    _c("button")
+  ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", [
-      _c("button", { staticClass: "g-button" }, [_vm._v("按钮")]),
-      _c("button")
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
           return {
@@ -11432,7 +11427,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "8101" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "5149" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
