@@ -1,3 +1,9 @@
+@keyframes spin {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg); } }
+
 .g-button {
   font-size: var(--font-size);
   height: var(--button-height);
@@ -8,7 +14,8 @@
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  vertical-align: middle; }
+  vertical-align: middle;
+  line-height: 1em; }
   .g-button:hover {
     border-color: var(--border-color-hover); }
   .g-button:active {
@@ -26,6 +33,8 @@
     order: 2;
     margin-left: 0.3em;
     margin-right: 0; }
+  .g-button .loading {
+    animation: spin 2s infinite linear; }
 .g-icon {
   height: 1em;
   width: 1em; }
