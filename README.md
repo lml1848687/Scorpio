@@ -1,12 +1,61 @@
-### 通过造一些简单的轮子来学习VUE，目标是在工作中熟练的使用VUE
+# Scorpio - 一个初级的Vue UI 组件
+[![Build Status](https://travis-ci.org/lml1848687/VUE-Learning.svg?branch=master)](https://travis-ci.org/lml1848687/VUE-Learning)
+## 介绍
 
-作者：Robert Liu
+## 开始使用
+
+1. 添加CSS样式
+  使用本框架前，请在CSS中开启border-box
+  ```
+  *,*::before,*::after{box-sizing:border-box;}
+  ```
+  IE 8 及以上的浏览器都支持此样式。
+
+  你需要自己如下面一样设置默认样式（我后续会优化,改成SCSS变量）
+  ```
+  html {
+    --button-height: 32px;
+    --font-size: 14px;
+    --button-bg: white;
+    --button-active-bg: #eee;
+    --border-radius: 4px;
+    --color: #333;
+    --border-color: #999;
+    --border-color-hover: #666;
+  }
+  ```
+  IE 15 及以上的浏览器都支持此样式。
+
+2. 安装 Scorpio
+  ```
+  npm i --save Scorpio
+  ```
+
+3. 引入 Scorpio
+  ```
+  import {Button, ButtonGroup, Icon} from 'Scropio'
+  import 'Scropio/dist/index.css' 
+
+  export default {
+    components: {
+      'g-button': Button,
+      'g-icon': Icon
+    }
+  }
+  ```
+
+4. 引入 svg symbols
+  ```
+  <script src="//at.alicdn.com/t/font_927760_lq1zdt75xxq.js"></script>
+  ```
+## 文档
+
+## 提问
 
 
-#### 安装
+## 变更记录
 
-使用时，请在CSS中开启border-box
 
-```
-*{box-sizing: border-box;}
-```
+## 联系方式
+
+## 贡献代码
