@@ -45,5 +45,8 @@
   },
   "alias": {
     "vue": "./node_modules/vue/dist/vue.common.js"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
