@@ -1,52 +1,54 @@
 {
-  "name": "wanjuche20181126",
-  "version": "0.0.1",
-  "description": "一些简单的Vue-UI轮子",
-  "main": "dist/index.js",
-  "scripts": {
-    "dev-test": "parcel watch test/* --no-cache && karma start",
-     "test": "parcel build test/* --no-minify && karma start --single-run"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/lml1848687/VUE-Learning.git"
-  },
-  "keywords": [
-    "VUE",
-    "UI"
-  ],
-  "author": "Robert Liu",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/lml1848687/VUE-Learning/issues"
-  },
-  "homepage": "https://github.com/lml1848687/VUE-Learning#readme",
-  "dependencies": {
-    "node-sass": "^4.10.0",
-    "vue": "^2.5.17",
-    "vue-hot-reload-api": "^2.3.1"
-  },
-  "devDependencies": {
-    "@vue/component-compiler-utils": "^2.3.0",
-    "chai": "^4.2.0",
-    "chai-spies": "^1.0.0",
-    "karma": "^3.1.1",
-    "karma-chai": "^0.1.0",
-    "karma-chai-spies": "^0.1.4",
-    "karma-chrome-launcher": "^2.2.0",
-    "karma-mocha": "^1.3.0",
-    "karma-sinon-chai": "^2.0.2",
-    "mocha": "^5.2.0",
-    "parcel-bundler": "^1.10.3",
-    "sass": "^1.15.1",
-    "sinon": "^7.1.1",
-    "sinon-chai": "^3.2.0",
-    "vue-template-compiler": "^2.5.17"
-  },
-  "alias": {
-    "vue": "./node_modules/vue/dist/vue.common.js"
-  },
-  "publishConfig": {
-    "access": "public"
-  }
+    "name": "wanjuche20181126",
+    "version": "0.0.1",
+    "description": "一些简单的Vue-UI轮子",
+    "main": "dist/index.js",
+    "scripts": {
+        "dev-test": "parcel watch test/* --no-cache && karma start",
+        "test": "parcel build test/* --no-minify && karma start --single-run",
+        "start": "npx parcel index.html --no-cache" 
+
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lml1848687/VUE-Learning.git"
+    },
+    "keywords": [
+        "VUE",
+        "UI"
+    ],
+    "author": "Robert Liu",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/lml1848687/VUE-Learning/issues"
+    },
+    "homepage": "https://github.com/lml1848687/VUE-Learning#readme",
+    "dependencies": {
+        "node-sass": "^4.10.0",
+        "vue": "^2.5.17",
+        "vue-hot-reload-api": "^2.3.1"
+    },
+    "devDependencies": {
+        "@vue/component-compiler-utils": "^2.3.0",
+        "chai": "^4.2.0",
+        "chai-spies": "^1.0.0",
+        "karma": "^3.1.1",
+        "karma-chai": "^0.1.0",
+        "karma-chai-spies": "^0.1.4",
+        "karma-chrome-launcher": "^2.2.0",
+        "karma-mocha": "^1.3.0",
+        "karma-sinon-chai": "^2.0.2",
+        "mocha": "^5.2.0",
+        "parcel-bundler": "^1.10.3",
+        "sass": "^1.15.1",
+        "sinon": "^7.1.1",
+        "sinon-chai": "^3.2.0",
+        "vue-template-compiler": "^2.5.17"
+    },
+    "alias": {
+        "vue": "./node_modules/vue/dist/vue.common.js"
+    },
+    "publishConfig": {
+        "access": "public"
+    }
 }
