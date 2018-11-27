@@ -1,17 +1,16 @@
 {
-    "name": "wanjuche20181126",
-    "version": "0.0.1",
+    "name": "Scorpio",
+    "version": "0.0.3",
     "description": "一些简单的Vue-UI轮子",
     "main": "dist/index.js",
     "scripts": {
         "dev-test": "parcel watch test/* --no-cache && karma start",
         "test": "parcel build test/* --no-minify && karma start --single-run",
-        "start": "npx parcel index.html --no-cache" 
-
+        "start": "npx parcel index.html --no-cache"
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/lml1848687/VUE-Learning.git"
+        "url": "git+https://github.com/lml1848687/Scorpio.git"
     },
     "keywords": [
         "VUE",
@@ -20,9 +19,9 @@
     "author": "Robert Liu",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/lml1848687/VUE-Learning/issues"
+        "url": "https://github.com/lml1848687/Scorpio/issues"
     },
-    "homepage": "https://github.com/lml1848687/VUE-Learning#readme",
+    "homepage": "https://github.com/lml1848687/Scorpio#readme",
     "dependencies": {
         "node-sass": "^4.10.0",
         "vue": "^2.5.17",
