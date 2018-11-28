@@ -7,7 +7,7 @@ Vue.config.devtools = false
 
 describe('Input', () => {
   it('存在.', () => {
-    expect(Input).to.be.ok
+    expect(Input).to.exist
   })
   describe('props', () => {
     const Constructor = Vue.extend(Input)
@@ -61,13 +61,13 @@ describe('Input', () => {
       vm.$destroy()
     })
     it('支持change/input/focus/blur事件', ()=>{
-      ['change','input','focus','blur'].forEach((EventNmae)=>{
+      ['change','input','focus','blur'].forEach((EventName)=>{
         vm = new Constructor({}
           ).$mount()
           const callback = sinon.fake()
-          vm.$on(EventNmae,callback)
-          //触发input的EventNmae事件
-          let event =new Event(EventNmae)
+          vm.$on(EventName,callback)
+          //触发input的EEventName事件
+          let event =new Event(EventName)
           let inputElement = vm.$el.querySelector('input')
           inputElement.dispatchEvent(event)
           expect(callback).to.have.been.calledWith(event)
