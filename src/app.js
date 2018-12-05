@@ -10,8 +10,9 @@ import Header from './header'
 import Sider from './sider'
 import Footer from './footer'
 import Content from './content'
+import Toast from './toast'
 
-
+import plugin from './plugin'
 
 
 
@@ -20,12 +21,14 @@ Vue.component('g-icon', Icon)
 Vue.component('g-button-group', ButtonGroup)
 Vue.component('g-input', Input)
 Vue.component('g-row', Row)
+Vue.component('g-col', Col)
 Vue.component('g-layout', Layout)
 Vue.component('g-header', Header)
 Vue.component('g-sider', Sider)
 Vue.component('g-footer', Footer)
 Vue.component('g-content', Content)
-
+Vue.component('g-toast', Toast)
+Vue.use(plugin)
 new Vue({
   el: '#app',
   data: {
@@ -34,9 +37,12 @@ new Vue({
     loading3: false,
     message: 'MIKY'
   },
+  created(){
+    
+  },
   methods:{
-    inputChange (e){
-      console.log(e.target.value)
+    showToast(){
+      this.$toast('nihao')
     }
   }
 })
