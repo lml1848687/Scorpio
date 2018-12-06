@@ -42,7 +42,7 @@ new Vue({
   },
   methods:{
     showToast(){
-      this.$toast('nihao')
+      this.$toast('I am Message')
     }
   }
 })
