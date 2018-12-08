@@ -35,14 +35,14 @@ new Vue({
     loading1: false,
     loading2: true,
     loading3: false,
-    message: 'MIKY'
+    message: 'hidadadawdawd'
   },
   created(){
-    
+    this.$toast(' <strong>我知道了我知道了我知道了我知道了我知道了我知道了我知道了我知道了我知道了</strong> ', {enableHtml: true})
   },
   methods:{
     showToast(){
-      this.$toast('I am Message')
+      
     }
   }
 })
