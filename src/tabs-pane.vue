@@ -1,5 +1,5 @@
 <template>
-  <div class="tabs-pane" :class="classes">
+  <div class="tabs-pane" :class="classes" v-if="active">
     <slot></slot>
   </div>
 </template>
@@ -38,10 +38,8 @@ export default {
 </script>
 <style lang="scss" scoped>
 .tabs-pane {
-  display: none;
+  padding:  1em;
   &.active {
-    display: block;
-    background: red;
   }
 }
 </style>
