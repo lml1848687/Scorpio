@@ -50,10 +50,6 @@ new Vue({
     
   },
   methods:{
-    yyy(data){
-      console.log('yyy')
-      console.log(data)
-    },
     showToast1(){
       this.showToast('top')
     },
