@@ -38,7 +38,6 @@ export default {
             childVm.$options.name === "GuluTabsItem" &&
             childVm.name === this.selected
           ) {
-            console.log(childVm.$el)
             this.eventBus.$emit("update:selected", this.selected,childVm);
           }
         });
