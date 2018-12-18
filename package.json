@@ -23,7 +23,6 @@
     },
     "homepage": "https://github.com/lml1848687/Scorpio#readme",
     "dependencies": {
-        "node-sass": "^4.10.0",
         "vue": "^2.5.17",
         "vue-hot-reload-api": "^2.3.1"
     },
@@ -38,6 +37,7 @@
         "karma-mocha": "^1.3.0",
         "karma-sinon-chai": "^2.0.2",
         "mocha": "^5.2.0",
+        "node-sass": "^4.11.0",
         "parcel-bundler": "^1.10.3",
         "sass": "^1.15.1",
         "sinon": "^7.1.1",
