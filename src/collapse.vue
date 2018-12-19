@@ -12,8 +12,8 @@ export default {
       type: Boolean,
       default: false
     },
-    selected:{
-      type:String
+    selected: {
+      type: String
     }
   },
   data() {
@@ -22,15 +22,16 @@ export default {
     };
   },
   provide() {
-    
-      return {
-        eventBus: this.eventBus
-      }
-    
+    return {
+      eventBus: this.eventBus
+    };
   },
   mounted() {
-    this.eventBus.$emit('update:selected',this.selected)
-  },
+    this.eventBus.$emit("update:selected", this.selected);
+    this.eventBus.$on("update:selected", name => {
+      this.$emit("update:selected", name);
+    });
+  }
 };
 </script>
 <style lang="scss" scoped>
