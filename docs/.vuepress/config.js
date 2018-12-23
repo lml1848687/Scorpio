@@ -1,7 +1,9 @@
 module.exports = {
+  base:"/Scorpio/",
   title: 'Scorpio UI',
   description: 'Scorpio UI 是一个好用的 UI 框架，提供了......一系列的常用组件，适合移动端和 PC 端的使用',
   themeConfig: {
+    base:"/Scorpio/",
     nav:[
       {text:'主页', link:'/'},
       {text:'文档', link:'/guide/'},
@@ -16,7 +18,13 @@ module.exports = {
        
       {
         title: '组件',
-        children: [ '/components/button' ]
+        children: [ '/components/button',
+        '/components/collapase',
+        '/components/input', 
+        '/components/tabs', 
+        '/components/layout', 
+        '/components/toast', 
+      ]
       } 
     ]
   }
