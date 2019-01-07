@@ -3,37 +3,17 @@
         <div class="trigger" @click="popoverVisible=!popoverVisible">
         </div>
         <div class="popover" v-if="popoverVisible">
-            <div class="level1">
-                <div class="label"
-                     v-for="item1 in source"
-                     style="border: 1px solid red"
-                     @click="level1Selected = item1"
-                >
-                    {{item1.name}}
-                </div>
-            </div>
-
-            <div class="label" class="level2">
-                <div v-for="item2 in level2Items"
-                     @click="level2Selected = item2">
-                    {{item2.name}}
-                </div>
-            </div>
-            <div class="label" class="level3" >
-                <div v-for="item3 in level3Items">
-                    {{item3.name}}
-                </div>
-            </div>
+            <cascader-items :items="source"></cascader-items>
         </div>
     </div>
 </template>
 
 <script>
-    import CascaderItem from './cascader-item'
+    import CascaderItems from './cascader-items'
 
     export default {
         name: 'GuluCascader',
-        components: {CascaderItem},
+        components: {CascaderItems},
         props: {
             source: {
                 type: Array
