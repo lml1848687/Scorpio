@@ -81,6 +81,7 @@
 			height: 100%;
 			padding: 0.3em 0;
 			overflow: auto;
+			border: 1px solid red;
 		}
 		.right {
 			height: 100%;
