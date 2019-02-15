@@ -1,6 +1,7 @@
 <template>
 	<div class="cascader">
 		<div class="trigger" @click="popoverVisible=!popoverVisible">
+      {{result|| '\&nbsp;'}}
 		</div>
 		<div class="popover-wrapper" v-if="popoverVisible">
 			<cascader-items 
@@ -38,19 +39,8 @@
       }
     },
     computed:{
-      level2Items(){
-        if (this.level1Selected) {
-          return this.level1Selected.children
-        }else {
-          return []
-        }
-      },
-      level3Items(){
-        if (this.level2Selected) {
-          return this.level2Selected.children
-        }else {
-          return []
-        }
+      result(){
+        return this.selected.map((item)=>item.name).join('/')
       }
     },
     methods:{
@@ -67,14 +57,20 @@
 	.cascader {
 		position: relative;
 		.trigger {
-			border: 1px solid black;
-			height: 32px;
-			width: 100px;
+			height: $input-height;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 1em;
+      min-width: 10em;
+			border: 1px solid $border-color;
+      border-radius: $border-radius;
 		}
 
 		.popover-wrapper {
 			position: absolute;
-			top: 100%;
+      top: 100%;
+      margin-top: 8px;
 			left: 0;
 			background: white;
 			display: flex;
