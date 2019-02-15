@@ -1,15 +1,21 @@
 <template>
 	<div class="cascaderItems" :style="{height: height}">
+		<div>
+			selected:{{selected && selected[level] && selected[level].name}}
+			level:{{level}}
+		</div>
 		<div class="left">
 			<div class="label"
-					 v-for="item in items"
-					 @click="leftSelected = item">
+					 v-for="(item,index) in items"
+					 @click="onClickLabel(item)"
+					 :key="index">
 				{{item.name}}
 				<icon v-if="item.children" name="right" class="icon">  </icon>
 			</div>
 		</div>
 		<div class="right" v-if="rightItems">
-			<gulu-cascader-items :items="rightItems" :height="height"></gulu-cascader-items>
+			<gulu-cascader-items :items="rightItems" :height="height" :level="level+1"
+			:selected="selected" @update:selected="onUpdateSelected"></gulu-cascader-items>
 		</div>
 	</div>
 </template>
@@ -27,22 +33,43 @@
       },
 			height:{
         type: String
+			},
+			selected:{
+				type: Array,
+				default:()=>{return []}
+			},
+			level:{
+				type:Number,
+				default:0
 			}
     },
     data () {
       return {
-        leftSelected: null
+        
       }
     },
     computed: {
       rightItems () {
-        if (this.leftSelected && this.leftSelected.children) {
-          return this.leftSelected.children
+				let currentSelected = this.selected[this.level]
+        if (currentSelected && currentSelected.children) {
+          return currentSelected.children
         } else {
           return null
         }
       }
-    }
+		},
+		methods:{
+			onClickLabel(item){
+				//this.seleceted[this.level] = item
+				// this.$set(this.selected,this.level,item)
+				let copy=JSON.parse(JSON.stringify(this.selected))
+				copy[this.level] = item
+				this.$emit('update:selected',copy)
+			},
+			onUpdateSelected(newSelected){
+				this.$emit('update:selected',newSelected)
+			}
+		}
   }
 </script>
 
