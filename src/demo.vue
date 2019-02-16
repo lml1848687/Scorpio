@@ -8,12 +8,22 @@
       :selected.sync="selected"
       :load-data="loadData"></g-cascader>
     </div>
+    <g-popover>
+      <template>
+        <button>点我</button>
+      </template>
+      <template slot="content">
+        弹出内容
+      </template>
+    </g-popover>
   </div>
 </template>
 
 <script>
+import Button from './button'
 import Cascader from "./cascader";
 import db from "./db";
+import Popover from './popover'
 
 // function ajax1(parentId = 0, success, fail) {
 //   let id = setTimeout(() => {
@@ -42,7 +52,11 @@ function ajax (parentId=0){
 }
 export default {
   name: "demo",
-  components: { "g-cascader": Cascader },
+  components: { 
+    "g-cascader": Cascader ,
+    "g-popover": Popover,
+    "g-button": Button
+    },
   data() {
     return {
       selected: [],
