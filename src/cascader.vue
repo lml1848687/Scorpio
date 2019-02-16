@@ -8,6 +8,7 @@
         :height="popoverHeight"
         :selected="selected"
         @update:selected="onUpdateSelected"
+        :loading-item="loadingItem"
       ></cascader-items>
     </div>
   </div>
@@ -15,11 +16,11 @@
 
 <script>
 import CascaderItems from "./cascader-items";
-import ClickOutside from './click-outside'
+import ClickOutside from "./click-outside";
 
 export default {
   name: "GuluCascader",
-  directives:{ClickOutside},
+  directives: { ClickOutside },
   components: { CascaderItems },
   props: {
     source: {
@@ -40,7 +41,8 @@ export default {
   },
   data() {
     return {
-      popoverVisible: false
+      popoverVisible: false,
+      loadingItem: {}
     };
   },
   computed: {
@@ -48,18 +50,18 @@ export default {
       return this.selected.map(item => item.name).join("/");
     }
   },
-  methods: {    
-    open(){
-      this.popoverVisible = true
+  methods: {
+    open() {
+      this.popoverVisible = true;
     },
-    close(){
-      this.popoverVisible =false
+    close() {
+      this.popoverVisible = false;
     },
-    toggle(){
+    toggle() {
       if (this.popoverVisible === true) {
-        this.close()
-      }else{
-        this.open()
+        this.close();
+      } else {
+        this.open();
       }
     },
 
@@ -102,10 +104,12 @@ export default {
         let copy = JSON.parse(JSON.stringify(this.source));
         let toUpdate = complex(copy, lastItem.id);
         toUpdate.children = result;
-        this.$emit("update:source",copy)
+        this.$emit("update:source", copy);
+        this.loadingItem = {}
       };
-      if(!lastItem.isLeaf){
-      this.loadData(lastItem, updateSource);
+      if (!lastItem.isLeaf && this.loadData) {
+        this.loadData(lastItem, updateSource);
+        this.loadingItem = lastItem;
       }
     }
   }
@@ -118,7 +122,6 @@ export default {
 .cascader {
   display: inline-block;
   position: relative;
-  border: 1px solid red;
   .trigger {
     height: $input-height;
     display: inline-flex;
@@ -128,6 +131,7 @@ export default {
     min-width: 10em;
     border: 1px solid $border-color;
     border-radius: $border-radius;
+    background: white;
   }
 
   .popover-wrapper {
@@ -137,6 +141,7 @@ export default {
     left: 0;
     background: white;
     display: flex;
+    z-index: 1;
     @extend .box-shadow;
     .label {
       white-space: nowrap;

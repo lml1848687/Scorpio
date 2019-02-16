@@ -2,14 +2,18 @@
   <div class="cascaderItems" :style="{height: height}">
     <div class="left">
       <div class="label" v-for="(item,index) in items" @click="onClickLabel(item)" :key="index">
-				<span class="name">
-        {{item.name}}
-
-				</span>
-        <icon v-if="!item.isLeaf" name="right" class="icon"></icon>
+        <span class="name">{{item.name}}</span>
+        <span class="icons">
+          <template v-if="item.name === loadingItem.name">
+            <icon name="loading" class="icon loading"></icon>
+          </template>
+          <template v-else>
+            <icon v-if="!item.isLeaf" name="right" class="icon"></icon>
+          </template>
+        </span>
       </div>
     </div>
-    <div class="right" v-if="rightItems">
+    <div class="right" v-if="rightItems" :loading-item="loadingItem">
       <gulu-cascader-items
         :items="rightItems"
         :height="height"
@@ -44,6 +48,10 @@ export default {
     level: {
       type: Number,
       default: 0
+    },
+    loadingItem: {
+			type: Object,
+			default: ()=>({})
     }
   },
   data() {
@@ -55,7 +63,7 @@ export default {
         let item = this.items.filter(
           item => item.name === this.selected[this.level].name
         );
-        if (item && item[0].children&&item[0].children.length > 0) {
+        if (item && item[0].children && item[0].children.length > 0) {
           return item[0].children;
         }
       }
@@ -98,19 +106,22 @@ export default {
     padding: 0.3em 1em;
     display: flex;
     justify-content: flex-start;
-		align-items: center;
-		cursor: pointer;
-		white-space: nowrap;
-		&:hover {
-			background:$grey;
-		}
-		>.name {
-			margin-right: 1em;
-			user-select: none;
-		}
-    .icon {
+    align-items: center;
+    cursor: pointer;
+    white-space: nowrap;
+    &:hover {
+      background: $grey;
+    }
+    > .name {
+      margin-right: 1em;
+      user-select: none;
+    }
+    .icons {
       margin-left: auto;
       transform: scale(0.8);
+      .loading {
+        animation: spin 2s infinite linear;
+      }
     }
   }
 }

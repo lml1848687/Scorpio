@@ -8,6 +8,11 @@
       :selected.sync="selected"
       :load-data="loadData"></g-cascader>
     </div>
+    <div style="padding:20px">
+      <g-cascader :source.sync="source" popover-height="200px" 
+      :selected.sync="selected"
+      :load-data="loadData"></g-cascader>
+    </div>
     <g-popover>
       <template>
         <button>点我</button>
@@ -46,7 +51,7 @@ function ajax (parentId=0){
         }
       })
       success(result);
-    }, 300);
+    }, 3000);
     
   })
 }
