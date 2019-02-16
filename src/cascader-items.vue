@@ -2,8 +2,11 @@
   <div class="cascaderItems" :style="{height: height}">
     <div class="left">
       <div class="label" v-for="(item,index) in items" @click="onClickLabel(item)" :key="index">
+				<span class="name">
         {{item.name}}
-        <icon v-if="item.children" name="right" class="icon"></icon>
+
+				</span>
+        <icon v-if="!item.isLeaf" name="right" class="icon"></icon>
       </div>
     </div>
     <div class="right" v-if="rightItems">
@@ -94,10 +97,18 @@ export default {
   .label {
     padding: 0.3em 1em;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+		align-items: center;
+		cursor: pointer;
+		&:hover {
+			background:$grey;
+		}
+		>.name {
+			margin-right: 1em;
+			user-select: none;
+		}
     .icon {
-      margin-left: 1em;
+      margin-left: auto;
       transform: scale(0.8);
     }
   }

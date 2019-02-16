@@ -88,7 +88,9 @@ export default {
         toUpdate.children = result;
         this.$emit("update:source",copy)
       };
+      if(!lastItem.isLeaf){
       this.loadData(lastItem, updateSource);
+      }
     }
   }
 };
