@@ -11,7 +11,7 @@
         :key="n"
         :class="{active : selectedIndex === n-1}"
         @click="select(n-1)"
-      >{{n-1}}</span>
+      >{{n}}</span>
     </div>
   </div>
 </template>
@@ -32,7 +32,7 @@ export default {
     return {
       childrenLength: 0,
       lastSelectedIndex: undefined,
-      timerId:undefined
+      timerId: undefined
     };
   },
   mounted() {
@@ -56,15 +56,15 @@ export default {
       this.lastSelectedIndex = this.selectedIndex;
       this.$emit("update:selected", this.names[index]);
     },
-    onMouseEnter(){
-      this.pause()
+    onMouseEnter() {
+      this.pause();
     },
-    onMouseLeave(){
-      this.playAutomatically()
+    onMouseLeave() {
+      this.playAutomatically();
     },
     playAutomatically() {
       if (this.timerId) {
-        return
+        return;
       }
       let run = () => {
         let index = this.names.indexOf(this.getSelected());
@@ -79,10 +79,10 @@ export default {
         this.timerId = setTimeout(run, 3000);
       };
       this.timerId = setTimeout(run, 3000);
-    },    
-    pause(){
-      window.clearTimeout(this.timerId)
-      this.timerId = undefined
+    },
+    pause() {
+      window.clearTimeout(this.timerId);
+      this.timerId = undefined;
     },
     getSelected() {
       let first = this.$children[0];
@@ -91,16 +91,24 @@ export default {
     updateChildren() {
       let selected = this.getSelected();
       this.$children.forEach(vm => {
-        let reverse = this.selectedIndex > this.lastSelectedIndex ? false : true;
-        if (this.lastSelectedIndex === this.$children.length-1 
-        && this.selectedIndex ===0) {
-          reverse = false
+        let reverse =
+          this.selectedIndex > this.lastSelectedIndex ? false : true;
+        if (this.timerId) {
+          if (
+            this.lastSelectedIndex === this.$children.length - 1 &&
+            this.selectedIndex === 0
+          ) {
+            reverse = false;
+          }
+          if (
+            this.lastSelectedIndex === 0 &&
+            this.selectedIndex === this.$children.length - 1
+          ) {
+            reverse = true;
+          }
         }
-        if (this.lastSelectedIndex === 0
-        && this.selectedIndex ===this.$children.length-1 ) {
-          reverse = true
-        }
-        vm.reverse = reverse
+
+        vm.reverse = reverse;
         this.$nextTick(() => {
           vm.selected = selected;
         });
@@ -120,10 +128,31 @@ export default {
     position: relative;
   }
   &-dots {
+    display: flex;
+      justify-content: center;
+      align-items: center;
+    padding: 10px 0;
     > span {
+      width: 1.2em;
+      height: 1.2em;
+      padding: 8px;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      background: #ddd;
+      margin: 0 0.5em;
+      &:hover{
+        cursor: pointer;
+      }
       &.active {
         background: red;
+        color: white;
+        &:hover{
+          cursor: default;
+        }
       }
+      
     }
   }
 }
