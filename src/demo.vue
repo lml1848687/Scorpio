@@ -22,7 +22,7 @@ export default {
   components: { GSlides ,GSlidesItem},
   data(){
     return{
-      selected:'3'
+      selected:'1'
     }
   },
   created(){

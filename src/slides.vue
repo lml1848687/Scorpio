@@ -68,9 +68,9 @@ export default {
       }
       let run = () => {
         let index = this.names.indexOf(this.getSelected());
-        let newIndex = index - 1;
+        let newIndex = index + 1;
         if (newIndex === -1) {
-          newIndex = this.names.length - 1;
+          newIndex = this.names.length + 1;
         }
         if (newIndex === this.names.length) {
           newIndex = 0;
@@ -91,7 +91,12 @@ export default {
     updateChildren() {
       let selected = this.getSelected();
       this.$children.forEach(vm => {
-        vm.reverse = this.selectedIndex > this.lastSelectedIndex ? false : true;
+        let reverse = this.selectedIndex > this.lastSelectedIndex ? false : true;
+        if (this.lastSelectedIndex === this.$children.length-1 
+        && this.selectedIndex ===0) {
+          reverse = false
+        }
+        vm.reverse = reverse
         this.$nextTick(() => {
           vm.selected = selected;
         });
