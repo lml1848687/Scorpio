@@ -1,95 +1,32 @@
 <template>
-  <div>
-    <p>{{selected&&selected[0]&&selected[0].name|| '空'}}</p>
-    <p>{{selected&&selected[1]&&selected[1].name|| '空'}}</p>
-    <p>{{selected&&selected[2]&&selected[2].name|| '空'}}</p>
-    <div style="padding:20px">
-      <g-cascader :source.sync="source" popover-height="200px" 
-      :selected.sync="selected"
-      :load-data="loadData"></g-cascader>
-    </div>
-    <div style="padding:20px">
-      <g-cascader :source.sync="source" popover-height="200px" 
-      :selected.sync="selected"
-      :load-data="loadData"></g-cascader>
-    </div>
-    <g-popover>
-      <template>
-        <button>点我</button>
-      </template>
-      <template slot="content">
-        弹出内容
-      </template>
-    </g-popover>
+  <div class="wrapper">
+    <g-slides :selected.sync="selected">
+      <g-slides-item name="1">
+        <div class="box">1</div>
+      </g-slides-item>
+      <g-slides-item name="2">
+        <div class="box">2</div>
+      </g-slides-item>
+      <g-slides-item name="3">
+        <div class="box">3</div>
+      </g-slides-item>
+    </g-slides>
   </div>
 </template>
 
 <script>
-import Button from './button'
-import Cascader from "./cascader";
-import db from "./db";
-import Popover from './popover'
-
-// function ajax1(parentId = 0, success, fail) {
-//   let id = setTimeout(() => {
-//     let result = db.filter(item => item.parent_id == parentId);
-//     success(result);
-//   }, 3000);
-//   return id;
-// }
-
-function ajax (parentId=0){
-  return new Promise((success,fail)=>{
-    setTimeout(() => {
-      let result= db.filter(item => item.parent_id == parentId);
-      result.forEach(node=>{
-        //node.isLeaf = true /false
-        if (db.filter(item=>item.parent_id === node.id).length>0) {
-          node.isLeaf = false
-        }else{
-          node.isLeaf = true
-        }
-      })
-      success(result);
-    }, 3000);
-    
-  })
-}
+import GSlides from "./slides";
+import GSlidesItem from './slides-item';
 export default {
   name: "demo",
-  components: { 
-    "g-cascader": Cascader ,
-    "g-popover": Popover,
-    "g-button": Button
-    },
-  data() {
-    return {
-      selected: [],
-      source: []
-    };
+  components: { GSlides ,GSlidesItem},
+  data(){
+    return{
+      selected:'3'
+    }
   },
   created(){
-    // ajax1(0,(result)=>{
-    //   this.source = result
-    // })
-    ajax(0).then((result)=>{
-      this.source = result
-    })
-  },
-  methods:{
-    loadData(node,fn){
-      let {name,id,parent_id} = node
-      ajax(id).then(result =>{
-        fn(result)
-      })
-    },
-    xxx(){
-      ajax(this.selected[0].id).then(result=>{        
-        let lastLevelSelected = this.source.filter(item => item.id === this.selected[0].id)[0]        
-        this.$set(lastLevelSelected,'children',result)
-        console.log(lastLevelSelected)
-      })
-    }
+
   }
 };
 </script>
@@ -100,10 +37,19 @@ export default {
   padding: 0;
   box-sizing: border-box;
 }
-html {
-  --font-size: 14px;
+.wrapper {
+  margin: 20px;
 }
-body {
-  font-size: var(--font-size);
+.box {
+  width: 100%;
+  height: 150px;
+  background: #ddd;
+  border: 1px solid red;
 }
+// html {
+//   --font-size: 14px;
+// }
+// body {
+//   font-size: var(--font-size);
+// }
 </style>
