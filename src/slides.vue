@@ -68,9 +68,9 @@ export default {
       }
       let run = () => {
         let index = this.names.indexOf(this.getSelected());
-        let newIndex = index + 1;
+        let newIndex = index - 1;
         if (newIndex === -1) {
-          newIndex = this.names.length + 1;
+          newIndex = this.names.length - 1;
         }
         if (newIndex === this.names.length) {
           newIndex = 0;
@@ -95,6 +95,10 @@ export default {
         if (this.lastSelectedIndex === this.$children.length-1 
         && this.selectedIndex ===0) {
           reverse = false
+        }
+        if (this.lastSelectedIndex === 0
+        && this.selectedIndex ===this.$children.length-1 ) {
+          reverse = true
         }
         vm.reverse = reverse
         this.$nextTick(() => {
