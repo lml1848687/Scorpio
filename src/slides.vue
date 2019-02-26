@@ -45,8 +45,8 @@ export default {
       type: Boolean,
       default: true
     },
-    autoPlayDelay:{
-      type:Number,
+    autoPlayDelay: {
+      type: Number,
       default: 3000
     }
   },
@@ -124,10 +124,10 @@ export default {
       });
     },
     onClickPrev() {
-      this.select(this.selectedIndex + 1);
+      this.select(this.selectedIndex - 1);
     },
     onClickNext() {
-      this.select(this.selectedIndex - 1);
+      this.select(this.selectedIndex + 1);
     },
     playAutomatically() {
       if (this.timerId) {
