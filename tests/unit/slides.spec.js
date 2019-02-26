@@ -1,20 +1,20 @@
-import chai, { expect } from 'chai'
-import sinon from 'sinon'
-import sinonChai from 'sinon-chai'
-import { mount } from '@vue/test-utils'
-import Slides from '@/slides.vue'
-import SlidesItem from '@/slides-item.vue'
-import Vue from 'vue'
-import { wrap } from 'module';
-import { listeners } from 'cluster';
-chai.use(sinonChai)
-describe('slides.vue', () => {
-  it('存在.', () => {
-    expect(Slides).to.exist
-  })
+import chai, { expect } from "chai";
+import sinon from "sinon";
+import sinonChai from "sinon-chai";
+import { mount } from "@vue/test-utils";
+import Slides from "@/slides/slides.vue";
+import SlidesItem from "@/slides/slides-item.vue";
+import Vue from "vue";
+import { wrap } from "module";
+import { listeners } from "cluster";
+chai.use(sinonChai);
+describe("slides.vue", () => {
+  it("存在.", () => {
+    expect(Slides).to.exist;
+  });
 
-  it('接受GuluSlidesItem,默认展示第一个', (done) => {
-    Vue.component('GSlidesItem', SlidesItem)
+  it("接受GuluSlidesItem,默认展示第一个", done => {
+    Vue.component("GSlidesItem", SlidesItem);
     const wrapper = mount(Slides, {
       propsData: {
         autoPlay: false
@@ -32,18 +32,18 @@ describe('slides.vue', () => {
         </g-slides-item>
       `
       }
-    })
-    setTimeout(() => {
-      expect(wrapper.find('.box1').exists()).to.be.true
-      done()
     });
-  })
-  it('selected是几,选中的就是几', (done) => {
-    Vue.component('GSlidesItem', SlidesItem)
+    setTimeout(() => {
+      expect(wrapper.find(".box1").exists()).to.be.true;
+      done();
+    });
+  });
+  it("selected是几,选中的就是几", done => {
+    Vue.component("GSlidesItem", SlidesItem);
     const wrapper = mount(Slides, {
       propsData: {
         autoPlay: false,
-        selected: '2'
+        selected: "2"
       },
       slots: {
         default: `
@@ -58,18 +58,18 @@ describe('slides.vue', () => {
         </g-slides-item>
       `
       }
-    })
-    setTimeout(() => {
-      expect(wrapper.find('.box2').exists()).to.be.true
-      done()
     });
-  })
-  it('点击第二个就展示第二个', (done) => {
-    Vue.component('GSlidesItem', SlidesItem)
+    setTimeout(() => {
+      expect(wrapper.find(".box2").exists()).to.be.true;
+      done();
+    });
+  });
+  it("点击第二个就展示第二个", done => {
+    Vue.component("GSlidesItem", SlidesItem);
     const wrapper = mount(Slides, {
       propsData: {
         autoPlay: false,
-        selected: '1'
+        selected: "1"
       },
       slots: {
         default: `
@@ -85,23 +85,23 @@ describe('slides.vue', () => {
       `
       },
       listeners: {
-        'update:selected': (x) => {
-          expect(x).to.eq("2")
-          done()
+        "update:selected": x => {
+          expect(x).to.eq("2");
+          done();
         }
       }
-    })
-    setTimeout(() => {
-      wrapper.find('[data-index = "1"]').trigger('click')
     });
-  })
-  it('会自动播放',  (done) => {
-    Vue.component('GSlidesItem', SlidesItem)
-    const callback = sinon.fake()
+    setTimeout(() => {
+      wrapper.find('[data-index = "1"]').trigger("click");
+    });
+  });
+  it("会自动播放", done => {
+    Vue.component("GSlidesItem", SlidesItem);
+    const callback = sinon.fake();
     const wrapper = mount(Slides, {
       propsData: {
         autoPlay: true,
-        selected: '1',
+        selected: "1",
         autoPlayDelay: 20
       },
       slots: {
@@ -118,12 +118,12 @@ describe('slides.vue', () => {
       `
       },
       listeners: {
-        'update:selected': callback
+        "update:selected": callback
       }
-    })
+    });
     setTimeout(() => {
-      expect(callback).to.have.been.calledWith('2')
-      done()
-    },21)
-  })
-})
+      expect(callback).to.have.been.calledWith("2");
+      done();
+    }, 21);
+  });
+});

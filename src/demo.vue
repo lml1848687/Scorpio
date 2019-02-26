@@ -16,18 +16,16 @@
 
 <script>
 import GSlides from "./slides";
-import GSlidesItem from './slides-item';
+import GSlidesItem from "./slides-item";
 export default {
   name: "demo",
-  components: { GSlides ,GSlidesItem},
-  data(){
-    return{
-      selected:'1'
-    }
+  components: { GSlides, GSlidesItem },
+  data() {
+    return {
+      selected: "1"
+    };
   },
-  created(){
-
-  }
+  created() {}
 };
 </script>
 
