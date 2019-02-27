@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cc9b12fb-dc9e-4a25-b3ab-afabd01fbc12" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_var.scss" beforeDir="false" afterPath="$PROJECT_DIR$/styles/_var.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/button/button.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/button/button.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/input.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/input.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tabs/tabs-head.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/tabs/tabs-head.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tabs/tabs-pane.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/tabs/tabs-pane.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tabs/tabs.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/tabs/tabs.vue" afterDir="false" />
-    </list>
+    <list default="true" id="cc9b12fb-dc9e-4a25-b3ab-afabd01fbc12" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/dist/" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -68,7 +60,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/cascader/cascader.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2277">
+            <state relative-caret-position="552">
+              <caret line="123" column="21" lean-forward="true" selection-start-line="123" selection-start-column="21" selection-end-line="123" selection-end-column="21" />
               <folding>
                 <element signature="e#479#524#0" expanded="true" />
               </folding>
@@ -118,8 +111,7 @@
     <auto-save>true</auto-save>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="956" />
-    <option name="y" value="4" />
+    <option name="x" value="780" />
     <option name="width" value="1044" />
     <option name="height" value="980" />
   </component>
@@ -144,8 +136,7 @@
             <path>
               <item name="Scorpio" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="cascader" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="styles" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
           </expand>
           <select />
@@ -195,7 +186,7 @@
       <workItem from="1547729681475" duration="4779000" />
       <workItem from="1547734961360" duration="850000" />
       <workItem from="1551187041350" duration="1003000" />
-      <workItem from="1551190159526" duration="93000" />
+      <workItem from="1551190159526" duration="373000" />
     </task>
     <task id="LOCAL-00001" summary="use vue-cli">
       <created>1547728739423</created>
@@ -208,11 +199,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13530000" />
+    <option name="totallyTimeSpent" value="13810000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="617" y="53" width="1044" height="980" extended-state="0" />
-    <editor active="true" />
+    <frame x="780" y="0" width="1044" height="980" extended-state="0" />
     <layout>
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -228,7 +218,7 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info active="true" anchor="right" content_ui="combo" id="Project" order="3" visible="true" weight="0.17196819" />
+      <window_info active="true" anchor="right" content_ui="combo" id="Project" order="3" visible="true" weight="0.39065605" />
       <window_info anchor="right" id="Favorites" order="4" weight="0.32985073" />
       <window_info anchor="right" id="npm" order="5" weight="0.32985073" />
       <window_info anchor="right" id="Structure" order="6" weight="0.2496329" />
@@ -369,7 +359,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cascader/cascader.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2277">
+        <state relative-caret-position="552">
+          <caret line="123" column="21" lean-forward="true" selection-start-line="123" selection-start-column="21" selection-end-line="123" selection-end-column="21" />
           <folding>
             <element signature="e#479#524#0" expanded="true" />
           </folding>

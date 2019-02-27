@@ -1,41 +1,26 @@
 <template>
-  <div style="padding-top: 16px;">
-    <h2>双向绑定</h2>
-    <p>
-      <strong>预览</strong>
-    </p>
-    <g-input v-model="value"></g-input>
-    <div>
-      value: {{value}}
-    </div>
-
-    <p>
-      <strong>代码</strong>
-    </p>
-    <pre><code>{{content}}</code></pre>
+  <div>
+    <g-nav :selected.sync="selected">
+      <g-nav-item name="home">首页</g-nav-item>
+      <g-nav-item name="about">关于</g-nav-item>
+      <g-nav-item name="hire">招聘</g-nav-item>
+    </g-nav>
   </div>
 </template>
 <script>
-  import GInput from '../src/input'
+import GNav from "../src/nav/nav";
+import GNavItem from "../src/nav/nav-item";
+import GSubNav from "../src/nav/nav-item";
 
-  export default {
-    components: {GInput},
-    data () {
-      return {
-        value: '1',
-        content: `
-          data:{
-            value: '1'
-          }
-
-          <g-input v-model="value"></g-input>
-          <div>
-            value: {{value}}
-          </div>
-      `.replace(/^ {8}/gm, '').trim()
-      }
-    }
+export default {
+  name: "demo",
+  components: { GNav, GNavItem, GSubNav },
+  data() {
+    return {
+      selected: ["home"]
+    };
   }
+};
 </script>
 
 <style lang="scss" scoped>
@@ -44,22 +29,4 @@
   padding: 0;
   box-sizing: border-box;
 }
-.wrapper {
-  margin: 20px;
-}
-.box {
-  width: 100%;
-  height: 150px;
-  background: #ddd;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 30px;
-}
-// html {
-//   --font-size: 14px;
-// }
-// body {
-//   font-size: var(--font-size);
-// }
 </style>
