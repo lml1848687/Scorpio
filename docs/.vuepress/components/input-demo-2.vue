@@ -16,7 +16,7 @@
   </div>
 </template>
 <script>
-  import GInput from '../src/input'
+  import GInput from '../../../src/input'
 
   export default {
     components: {GInput},
@@ -37,29 +37,3 @@
     }
   }
 </script>
-
-<style lang="scss" scoped>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-.wrapper {
-  margin: 20px;
-}
-.box {
-  width: 100%;
-  height: 150px;
-  background: #ddd;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 30px;
-}
-// html {
-//   --font-size: 14px;
-// }
-// body {
-//   font-size: var(--font-size);
-// }
-</style>

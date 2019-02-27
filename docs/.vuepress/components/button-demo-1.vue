@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h2>简单用法</h2>
     <g-button>默认按钮</g-button>
     <g-button icon="settings" icon-position="right">默认按钮</g-button>
     <g-button :loading="true">默认按钮</g-button>

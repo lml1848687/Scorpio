@@ -19,11 +19,12 @@ module.exports = {
       {
         title: '组件',
         children: [ '/components/button',
-        '/components/collapase',
+        '/components/grid',
         '/components/input', 
         '/components/tabs', 
+          '/components/toast',
         '/components/layout', 
-        '/components/toast', 
+         
       ]
       } 
     ]
