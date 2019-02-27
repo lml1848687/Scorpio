@@ -7,6 +7,7 @@
 <script type="text/javascript">
 export default {
   name: "GuluNavItem",
+  inject: ["root"],
   props: {
     name: {
       type: String,
@@ -18,7 +19,9 @@ export default {
       selected: false
     };
   },
-  components: {},
+  created() {
+    this.root.addItem(this);
+  },
   methods: {
     onClick() {
       this.$emit("add:selected", this.name);
@@ -30,7 +33,6 @@ export default {
 <style lang="scss" scoped>
 .g-nav-item {
   padding: 10px 20px;
-
   &.selected {
     background: red;
   }
