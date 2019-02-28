@@ -1,7 +1,10 @@
 <template>
   <div class="g-sub-nav" :class="{active}" v-click-outside="close">
-    <span @click="onClick">
+    <span class="g-sub-nav-label" @click="onClick">
       <slot name="title"></slot>
+      <span class="g-sub-nav-icon" :class="{open}">
+        <g-icon name="right"></g-icon>
+      </span>
     </span>
     <div class="g-sub-nav-popover" v-show="open">
       <slot></slot>
@@ -11,9 +14,11 @@
 
 <script type="text/javascript">
 import ClickOutside from "../click-outside.js";
+import GIcon from "../../src/icon";
 export default {
   name: "GuluSubNav",
   directives: { ClickOutside },
+  components: { GIcon },
   inject: ["root"],
   props: {
     name: {
@@ -65,9 +70,12 @@ export default {
       width: 100%;
     }
   }
-  > span {
+  &-label {
     padding: 10px 20px;
     display: block;
+  }
+  &-icon {
+    display: none;
   }
   &-popover {
     position: absolute;
@@ -83,9 +91,34 @@ export default {
     min-width: 8em;
   }
 }
-.g-sub-nav .g-sub-nav .g-sub-nav-popover {
-  top: 0;
-  left: 100%;
-  margin-left: 8px;
+.g-sub-nav .g-sub-nav {
+  &.active {
+    &::after {
+      display: none;
+    }
+  }
+  .g-sub-nav {
+    &-popover {
+      top: 0;
+      left: 100%;
+      margin-left: 8px;
+    }
+    &-icon {
+      display: inline-flex;
+      margin-left: 0.5em;
+      transition: transform 250ms;
+      svg {
+        fill: $light-color;
+      }
+      &.open {
+        transform: rotate(180deg);
+      }
+    }
+    &-label {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
 }
 </style>

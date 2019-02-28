@@ -73,6 +73,8 @@ export default {
 .g-nav {
   display: flex;
   border-bottom: 1px solid $grey;
+  color: $color;
+  user-select: none;
   cursor: default;
 }
 </style>
