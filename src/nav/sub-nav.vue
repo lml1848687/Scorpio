@@ -30,15 +30,19 @@ export default {
   position: relative;
   > span {
     padding: 10px 20px;
-    display: inline-block;
-    vertical-align: top;
+    display: block;
   }
   &-popover {
     position: absolute;
     top: 100%;
     left: 0;
-    border: 1px solid black;
+    border: 1px solid blue;
     white-space: nowrap;
   }
+}
+.g-sub-nav .g-sub-nav .g-sub-nav-popover {
+  top: 0;
+  left: 100%;
+  margin-left: 8px;
 }
 </style>
