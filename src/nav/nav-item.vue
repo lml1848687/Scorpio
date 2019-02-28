@@ -24,6 +24,8 @@ export default {
   },
   methods: {
     onClick() {
+      this.root.namePath = [];
+      this.$parent.updateNamePath && this.$parent.updateNamePath();
       this.$emit("add:selected", this.name);
     }
   }
@@ -49,6 +51,7 @@ export default {
 .g-sub-nav .g-nav-item {
   color: $light-color;
   &.selected {
+    background: #ddd;
     &::after {
       display: none;
     }

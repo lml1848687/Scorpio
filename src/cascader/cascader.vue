@@ -16,7 +16,7 @@
 
 <script>
 import CascaderItems from "./cascader-items";
-import ClickOutside from "./click-outside";
+import ClickOutside from "../click-outside.js";
 
 export default {
   name: "GuluCascader",
@@ -105,7 +105,7 @@ export default {
         let toUpdate = complex(copy, lastItem.id);
         toUpdate.children = result;
         this.$emit("update:source", copy);
-        this.loadingItem = {}
+        this.loadingItem = {};
       };
       if (!lastItem.isLeaf && this.loadData) {
         this.loadData(lastItem, updateSource);
