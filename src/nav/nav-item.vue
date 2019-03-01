@@ -50,6 +50,7 @@ export default {
 }
 .g-sub-nav .g-nav-item {
   color: $light-color;
+  background: white;
   &.selected {
     background: #ddd;
     &::after {

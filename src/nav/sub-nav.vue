@@ -6,9 +6,11 @@
         <g-icon name="right"></g-icon>
       </span>
     </span>
-    <div class="g-sub-nav-popover" v-show="open">
-      <slot></slot>
-    </div>
+    <transition @enter="enter" @leave="leave">
+      <div class="g-sub-nav-popover" v-show="open" :class="{vertical}">
+        <slot></slot>
+      </div>
+    </transition>
   </div>
 </template>
 
@@ -19,7 +21,7 @@ export default {
   name: "GuluSubNav",
   directives: { ClickOutside },
   components: { GIcon },
-  inject: ["root"],
+  inject: ["root", "vertical"],
   props: {
     name: {
       type: String,
@@ -37,6 +39,15 @@ export default {
     }
   },
   methods: {
+    enter(el, done) {
+      let { height } = el.getBoundingClientRect();
+      el.style.height = `${height}px`;
+      done();
+    },
+    leave(el, done) {
+      el.style.height = 0;
+      done();
+    },
     close() {
       this.open = false;
     },
@@ -66,7 +77,7 @@ export default {
       position: absolute;
       bottom: 0;
       left: 0;
-      border-bottom: 2px solid $blue;
+      border-bottom: 1px solid $blue;
       width: 100%;
     }
   }
@@ -89,6 +100,12 @@ export default {
     background: $grey;
     color: $color;
     min-width: 8em;
+    &.vertical {
+      position: static;
+      border-radius: none;
+      border: none;
+      box-shadow: none;
+    }
   }
 }
 .g-sub-nav .g-sub-nav {
