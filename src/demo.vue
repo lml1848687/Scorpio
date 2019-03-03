@@ -1,7 +1,11 @@
 <template>
   <div>
     <div style="margin-bottom:500px">
-      <g-nav :selected.sync="selected" style="width:200px; margin:20px;">
+      <g-nav
+        :selected.sync="selected"
+        @update:selected="onChange"
+        style="width:200px; margin:20px;"
+      >
         <g-nav-item name="home">首页</g-nav-item>
         <g-sub-nav name="about">
           <template slot="title">关于</template>
@@ -56,8 +60,15 @@ export default {
   components: { GNav, GNavItem, GSubNav },
   data() {
     return {
-      selected: ["culture"]
+      selected: "culture"
     };
+  },
+  methods: {
+    onChange(selected) {
+      if (selected === "home") {
+        alert("hi");
+      }
+    }
   }
 };
 </script>
