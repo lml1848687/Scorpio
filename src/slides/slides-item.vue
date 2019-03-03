@@ -9,22 +9,22 @@
 
 <script>
 export default {
-  name:'GuluSlidesItem',
-  props:{
-    name:{
-      type:String,
-      required:true
+  name: "GuluSlidesItem",
+  props: {
+    name: {
+      type: String,
+      required: true
     }
   },
   data() {
     return {
-      selected:undefined,
-      reverse:false
+      selected: undefined,
+      reverse: false
     };
   },
-  computed:{
-    visible(){
-      return this.selected === this.name
+  computed: {
+    visible() {
+      return this.selected === this.name;
     }
   }
 };
@@ -33,7 +33,6 @@ export default {
 
 <style lang="scss" scoped>
 .g-slides-item {
-  
 }
 .slide-leave-active {
   position: absolute;
@@ -41,7 +40,8 @@ export default {
   left: 0;
   width: 100%;
 }
-.slide-enter-active,.slide-leave-active{
+.slide-enter-active,
+.slide-leave-active {
   transition: all 0.5s;
 }
 .slide-enter {

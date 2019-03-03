@@ -13,7 +13,7 @@
       </div>
     </div>
     <div class="g-slides-dots">
-      <span @click="onClickPrev">
+      <span @click="onClickPrev" data-action="prev">
         <g-icon name="left"></g-icon>
       </span>
       <span
@@ -23,7 +23,7 @@
         :class="{active : selectedIndex === n-1}"
         @click="select(n-1)"
       >{{n}}</span>
-      <span @click="onClickNext">
+      <span @click="onClickNext" data-action="next">
         <g-icon name="right"></g-icon>
       </span>
     </div>
