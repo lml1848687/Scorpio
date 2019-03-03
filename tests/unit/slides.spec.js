@@ -8,7 +8,7 @@ import Vue from "vue";
 import { wrap } from "module";
 import { listeners } from "cluster";
 chai.use(sinonChai);
-describe("slides.vue", () => {
+describe("Slides.vue", () => {
   it("存在.", () => {
     expect(Slides).to.exist;
   });
