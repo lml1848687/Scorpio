@@ -6,7 +6,7 @@
         <g-icon name="right"></g-icon>
       </span>
     </span>
-    <transition @enter="enter" @leave="leave">
+    <transition @enter="enter" @leave="leave" @after-enter="afterEnter" @after-leave="afterLeave">
       <div class="g-sub-nav-popover" v-show="open" :class="{vertical}">
         <slot></slot>
       </div>
@@ -40,13 +40,29 @@ export default {
   },
   methods: {
     enter(el, done) {
+      el.style.height = "auto";
       let { height } = el.getBoundingClientRect();
+      el.style.height = 0;
+      el.getBoundingClientRect();
       el.style.height = `${height}px`;
-      done();
+      el.addEventListener("transitionend", () => {
+        done();
+      });
+    },
+    afterEnter(el) {
+      el.style.height = "auto";
     },
     leave(el, done) {
+      let { height } = el.getBoundingClientRect();
+      el.style.height = `${height}px`;
+      el.getBoundingClientRect();
       el.style.height = 0;
-      done();
+      el.addEventListener("transitionend", () => {
+        done();
+      });
+    },
+    afterLeave(el) {
+      el.style.height = "auto";
     },
     close() {
       this.open = false;
@@ -105,6 +121,8 @@ export default {
       border-radius: none;
       border: none;
       box-shadow: none;
+      transition: height 1s;
+      overflow: hidden;
     }
   }
 }
