@@ -37,6 +37,7 @@ export default {
 .g-nav-item {
   padding: 10px 20px;
   position: relative;
+  white-space: nowrap;
   &.selected {
     &::after {
       content: "";
