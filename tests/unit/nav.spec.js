@@ -6,7 +6,6 @@ import Nav from "@/nav/nav.vue";
 import NavItem from "@/nav/nav-item.vue";
 import SubNav from "@/nav/sub-nav.vue";
 import Vue from "vue";
-import { listeners } from "cluster";
 chai.use(sinonChai);
 describe("Nav.vue", () => {
   it("存在.", () => {

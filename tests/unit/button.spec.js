@@ -27,8 +27,9 @@ describe("Button.vue", () => {
     const useElements = wrapper.find("use");
     expect(useElements.attributes()["href"]).to.equal("#i-loading");
   });
-  xit("icon 默认的 order 是 1", () => {
+  it("icon 默认的 order 是 1", () => {
     const wrapper = mount(Button, {
+      attachToDocument: true,
       propsData: {
         icon: "settings"
       }
@@ -36,11 +37,10 @@ describe("Button.vue", () => {
     const vm = wrapper.vm;
     const icon = vm.$el.querySelector("svg");
     expect(getComputedStyle(icon).order).to.eq("1");
-    vm.$el.remove();
-    vm.$destroy();
   });
-  xit("设置 iconPosition 可以改变 order", () => {
+  it("设置 iconPosition 可以改变 order", () => {
     const wrapper = mount(Button, {
+      attachToDocument: true,
       propsData: {
         icon: "settings",
         iconPosition: "right"
@@ -49,8 +49,6 @@ describe("Button.vue", () => {
     const vm = wrapper.vm;
     const icon = vm.$el.querySelector("svg");
     expect(getComputedStyle(icon).order).to.eq("2");
-    vm.$el.remove();
-    vm.$destroy();
   });
   it("点击 button 触发 click 事件", () => {
     const wrapper = mount(Button, {

@@ -5,8 +5,6 @@ import { mount } from "@vue/test-utils";
 import Slides from "@/slides/slides.vue";
 import SlidesItem from "@/slides/slides-item.vue";
 import Vue from "vue";
-import { wrap } from "module";
-import { listeners } from "cluster";
 chai.use(sinonChai);
 describe("Slides.vue", () => {
   it("存在.", () => {
