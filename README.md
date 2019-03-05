@@ -46,8 +46,8 @@ import 'Scropio/dist/index.css'
 
 export default {
   components: {
-    'g-button': Button,
-    'g-icon': Icon
+    's-button': Button,
+    's-icon': Icon
   }
 }
 ```
