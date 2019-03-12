@@ -1,13 +1,10 @@
 <template>
   <div style="padding-top: 16px;">
-    <h2>简单用法</h2>
-    <p>
-      <strong>预览</strong>
-    </p>
-    <g-input value="中文"></g-input>
-    <g-input value="中文" disabled></g-input>
-    <g-input value="中文" readonly></g-input>
-
+    <s-input value="中文"></s-input>
+    <s-input value="中文" disabled></s-input>
+    <s-input value="中文" readonly></s-input>
+    <hr>
+    <s-input value="123" error="请重新输入手机号码" class="input"></s-input>
     <p>
       <strong>代码</strong>
     </p>
@@ -15,20 +12,21 @@
   </div>
 </template>
 <script>
-  import GInput from '../../../src/input'
+import SInput from "../../../src/input";
 
-  export default {
-    components: {GInput},
-    data () {
-      return {
-        selected: '1',
-        content: `
-          <g-input></g-input>
-          <g-input value="中文"></g-input>
-          <g-input value="中文" disabled></g-input>
-          <g-input value="中文" readonly></g-input>
-      `.replace(/^ {8}/gm, '').trim()
-      }
-    }
+export default {
+  components: { SInput },
+  data() {
+    return {
+      selected: "1",
+      content: `
+<s-input></s-input>
+<s-input value="中文"></s-input>
+<s-input value="中文" disabled></s-input>
+<s-input value="中文" readonly></s-input>
+<s-input value="123" error="请重新输入手机号码" class="input"></s-input>
+  `.trim()
+    };
   }
+};
 </script>
