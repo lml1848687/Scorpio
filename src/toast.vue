@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper" :class="toastClasses">
+  <div class="gulu-toast" :class="toastClasses">
     <div class="toast" ref="toast">
       <div class="message">
         <slot v-if="!enableHtml"></slot>
@@ -16,10 +16,10 @@ export default {
   name: "GuluToast",
   props: {
     autoClose: {
-      type: [Boolean,Number],
+      type: [Boolean, Number],
       default: 5,
-      validator(value){
-        return value ===false || typeof value === 'number'         
+      validator(value) {
+        return value === false || typeof value === "number";
       }
     },
     closeButton: {
@@ -88,7 +88,7 @@ export default {
 $font-size: 14px;
 $toast-min-height: 40px;
 $toast-bg: rgba(0, 0, 0, 0.75);
-$animation-deration:1s;
+$animation-duration: 1s;
 @keyframes slide-up {
   0% {
     opacity: 0;
@@ -117,7 +117,7 @@ $animation-deration:1s;
     opacity: 1;
   }
 }
-.wrapper {
+.gulu-toast {
   position: fixed;
   left: 50%;
   transform: translateX(-50%);
@@ -126,13 +126,13 @@ $animation-deration:1s;
     .toast {
       border-top-left-radius: 0;
       border-top-right-radius: 0;
-      animation: slide-down $animation-deration;
+      animation: slide-down $animation-duration;
     }
   }
   &.position-bottom {
     bottom: 0;
     .toast {
-      animation: slide-up $animation-deration;
+      animation: slide-up $animation-duration;
       border-bottom-left-radius: 0;
       border-bottom-right-radius: 0;
     }
@@ -140,13 +140,12 @@ $animation-deration:1s;
   &.position-middle {
     top: 50%;
     transform: translate(-50%, -50%);
-    .toast{
-      animation: fade-in $animation-deration;
+    .toast {
+      animation: fade-in $animation-duration;
     }
   }
 }
-.toast {  
-
+.toast {
   font-size: $font-size;
   line-height: 1.8;
   min-height: $toast-min-height;

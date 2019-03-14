@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper" :class="{error}">
     <input
-      :value="value"
+      :placeholder="value"
       :disabled="disabled"
       :readonly="readonly"
       type="text"

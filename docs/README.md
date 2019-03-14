@@ -1,6 +1,6 @@
 # Scropio UI
 
-Scropio UI 是一个不太一样的 UI 框架。
+Scropio UI 是一个不太一样的 UI 框架（试验品）。
 
 本 UI 框架是一个「面向源码阅读者」的框架。如果对你有帮助，请不要吝惜你的 star。
 
@@ -16,14 +16,13 @@ Scropio UI 是一个不太一样的 UI 框架。
 
 1. 单元测试、覆盖率、持续集成等工程概念
 2. 重构、TDD/BDD、设计模式、单向数据流等技术概念
-2. Vue 的几乎所有功能，并且是深入理解这些功能，而不是肤浅理解
-
+3. Vue 的几乎所有功能，并且是深入理解这些功能，而不是肤浅理解
 
 ## 有哪些轮子
 
-* 简单轮子：按钮、输入框、网格、布局、Toast、Tabs、Popover、手风琴（代码已完成）
-* 进阶轮子：级联选择、无缝轮播、响应式导航条、分页、表单验证、Table、图片上传、Sticky、Tree、Suggestion、Datepicker（代码未完成）
-* 其他：路由、状态管理（代码未完成）
+- 简单轮子：按钮、输入框、网格、布局、Toast、Tabs、Popover、手风琴（代码已完成）
+- 进阶轮子：级联选择、无缝轮播、响应式导航条、分页、表单验证、Table、图片上传、Sticky、Tree、Suggestion、Datepicker（代码未完成）
+- 其他：路由、状态管理（代码未完成）
 
 ## 项目特点
 
@@ -32,8 +31,6 @@ Scropio UI 是一个不太一样的 UI 框架。
 3. 自说明的代码，即使没有注释，你也能看懂
 4. 初期我使用 parcel 构建方便新人上手，后期改为 Vue Cli 3 以实现更多功能
 
-
-
 ## 视觉稿
 
 本 UI 框架借鉴了一些成熟 UI 框架（如 Framework7、Element UI 和 Ant Design）的外观
@@ -41,13 +38,12 @@ Scropio UI 是一个不太一样的 UI 框架。
 ## 源码学习
 
 1. 安装依赖
-    ```
-    yarn install
-    ```
+
+   ```
+   yarn install
+   ```
 
 2. 启动 dev server
-    ```
-    yarn serve
-    ```
-
-
+   ```
+   yarn serve
+   ```

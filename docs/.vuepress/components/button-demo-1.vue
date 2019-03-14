@@ -1,26 +1,40 @@
 <template>
   <div>
-    <h2>简单用法</h2>
-    <g-button>默认按钮</g-button>
-    <g-button icon="settings" icon-position="right">默认按钮</g-button>
-    <g-button :loading="true">默认按钮</g-button>
-    <g-button disabled>默认按钮</g-button>
+    <s-button>默认按钮</s-button>
+    <s-button icon="settings" icon-position="right">默认按钮</s-button>
+    <s-button :loading="loading" @click="loading =!loading">默认按钮</s-button>
+    <s-button disabled>默认按钮</s-button>
+    <s-button-group>
+      <s-button icon="left">上一页</s-button>
+      <s-button icon="right" icon-position="right">下一页</s-button>
+    </s-button-group>
+    <p>
+      <strong>代码</strong>
+    </p>
     <pre><code>{{contents}}</code></pre>
   </div>
 </template>
 <script>
 import Button from "../../../src/button/button";
+import ButtonGroup from "../../../src/button/button-group";
 export default {
   components: {
-    "g-button": Button
+    "s-button": Button,
+    "s-button-group": ButtonGroup
   },
   data() {
     return {
-      contents: `<g-button >默认按钮</g-button>
-<g-button icon="settings" icon-position="right">默认按钮</g-button>
-<g-button :loading="true">默认按钮</g-button>
-<g-button disabled>默认按钮</g-button>
-`
+      loading: true,
+      contents: `
+<s-button>默认按钮</s-button>
+<s-button icon="settings" icon-position="right">默认按钮</s-button>
+<s-button :loading="loading" @click="loading =!loading">默认按钮</s-button>
+<s-button disabled>默认按钮</s-button>
+<s-button-group>
+  <s-button icon="left">上一页</s-button>
+  <s-button icon="right" icon-position="right">下一页</s-button>
+</s-button-group>
+    `.trim()
     };
   }
 };
