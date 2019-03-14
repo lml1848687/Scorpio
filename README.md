@@ -4,60 +4,49 @@
 
 ## 介绍
 
-## 开始使用
+这是我在学习 Vue 过程中做的一个 UI 框架，后续在工作中会不断的更新迭代原有的代码及组件。
 
-1. 添加 CSS 样式
-   使用本框架前，请在 CSS 中开启 border-box
+- 该框架参考了 element、antDesign 的 UI 界面及 API 设计
+- 适应 PC 端和移动端
+- 使用了 VuePress 搭建 UI 框架官网
+- 目前共完成 12 个 UI 组件：Button、Input、Grid、Layout、Collapse、Cascader、Table、Popover、Toast、Slides、Tabs、Nav
+- 使用 vue-test-utils 写单元测试，由于时间有限后期会慢慢完成所有组件的单元测试代码
+- 使用了 Travis CI 持续集成
 
-```
-*,*::before,*::after{box-sizing:border-box;}
-```
+## 使用的技术
 
-IE 8 及以上的浏览器都支持此样式。
+- Vue.js 技术栈，包括但不限于：指令及自定义指令、计算属性、class 动态绑定、条件渲染、列表渲染、事件监听处理、组件注册、props 及校验、插槽、动画过渡、过滤器、多种组件通信方式等
+- 设计模式：单向数据流、测试驱动开发、发布订阅模式、API 正交（props）、可测试代码（在标签加入特殊的属性，方便测试的时候可以找到）
+- 单元测试、覆盖率、持续集成
+- 测试库：Chai、Karma、Sinon、Vue-test-utils、Travis CI
 
-你需要自己如下面一样设置默认样式（我后续会优化,改成 SCSS 变量）
+## 下载源码
 
-```
-html {
-  --button-height: 32px;
-  --font-size: 14px;
-  --button-bg: white;
-  --button-active-bg: #eee;
-  --border-radius: 4px;
-  --color: #333;
-  --border-color: #999;
-  --border-color-hover: #666;
-}
-```
+- 文件夹里包含一个 demo,可以参考如何使用，注意引入的路径
+- 下载仓库代码
 
-IE 15 及以上的浏览器都支持此样式。
-
-2. 安装 Scorpio
-
-```
-npm i --save Scorpio
+```sh
+git clone https://github.com/lml1848687/Scorpio.git
 ```
 
-3. 引入 Scorpio
+- 安装依赖
 
-```
-import {Button, ButtonGroup, Icon} from 'Scropio'
-import 'Scropio/dist/index.css'
-
-export default {
-  components: {
-    'g-button': Button,
-    'g-icon': Icon
-  }
-}
+```sh
+npm install / yarn add
 ```
 
-## 文档
+- 运行
 
-## 提问
-
-## 变更记录
+```sh
+npm run serve / yarn serve
+```
 
 ## 联系方式
 
-## 贡献代码
+- 微信:Lambert1129
+- 官网:[点击此处跳转](https://lml1848687.github.io/Scorpio/)
+- Github:[点击此处跳转](https://github.com/lml1848687/Scorpio)
+
+## License
+
+- MIT
