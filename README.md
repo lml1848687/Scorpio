@@ -9,7 +9,7 @@
 - 该框架参考了 element、antDesign 的 UI 界面及 API 设计
 - 适应 PC 端和移动端
 - 使用了 VuePress 搭建 UI 框架官网
-- 目前共完成 12 个 UI 组件：Button、Input、Grid、Layout、Collapse、Cascader、Table、Popover、Toast、Slides、Tabs、Nav
+- 目前共完成 11 个 UI 组件：Button、Input、Grid、Layout、Collapse、Cascader、Popover、Toast、Slides、Tabs、Nav
 - 使用 vue-test-utils 写单元测试，由于时间有限后期会慢慢完成所有组件的单元测试代码
 - 使用了 Travis CI 持续集成
 
