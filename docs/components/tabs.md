@@ -23,7 +23,7 @@ title:Tabs
 
 - 组件通信,在父组件使用 provide 建立事件中心
 
-```
+```js
 data(){
   return{
       eventBus: new Vue()
@@ -38,13 +38,13 @@ provide(){
 
 在子组件或孙组件使用 inject 注入
 
-```
+```js
 inject:['eventBus'],
 ```
 
 - .sync 的使用方式,它是一个语法糖
 
-```
+```js
 //子组件触发
 this.$emit('update:selected', newTitle)
 //父组件监听
@@ -55,9 +55,9 @@ this.$emit('update:selected', newTitle)
 </s-tabs>
 ```
 
-- 标签有 class style，且组件内部有 class、style,两者会共存合并其他则会默认覆盖
-- getBoundingClientRect() 得到一个元素的 width height top left
-- 组件 name 的作用性，通过 this.\$options.name 找到
-- this.\$children，只能获得子组件不能获得子元素
-- this.\$nextTick 添加到任务队列中
-- console.warn 报警告,但是有些浏览器没有这个函数，所以要检测下 console&&console.warn
+- 标签有 `class style`，且组件内部有`class style`,两者会共存合并其他则会默认覆盖
+- `getBoundingClientRect()`得到一个元素的 `width height top left`
+- 组件 `name`的作用性，通过 `this.$options.name` 找到
+- `this.$children`，只能获得子组件不能获得子元素
+- `this.$nextTick` 添加到任务队列中
+- `console.warn` 报警告,但是有些浏览器没有这个函数，所以要检测下 `console&&console.warn`

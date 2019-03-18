@@ -47,7 +47,7 @@ export default {
     },
     autoPlayDelay: {
       type: Number,
-      default: 3000
+      default: 1500
     }
   },
   data() {

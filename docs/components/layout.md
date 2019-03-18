@@ -26,9 +26,9 @@ title:Layout
 
 ## 实现逻辑
 
-- 在 layout 组件中检测子组件是否含有 sider 组件
-- 如果为 true 那么 flex-direction：row
-- 如果为 false 那么为 column 方式排列
+- 在 `layout` 组件中检测子组件是否含有`sider` 组件
+- 如果为 `true` 那么 `flex-direction：row`
+- 如果为`false`那么为 `column` 方式排列
 
 ```js
 mounted(){

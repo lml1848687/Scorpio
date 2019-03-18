@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import Icon from "./icon";
+import Icon from "../icon";
 export default {
   name: "GuluCascaderItems",
   components: {
@@ -50,8 +50,8 @@ export default {
       default: 0
     },
     loadingItem: {
-			type: Object,
-			default: ()=>({})
+      type: Object,
+      default: () => ({})
     }
   },
   data() {
@@ -86,7 +86,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import "var";
+@import "../../styles/_var";
 .cascaderItems {
   display: flex;
   align-items: flex-start;
@@ -96,7 +96,6 @@ export default {
     height: 100%;
     padding: 0.3em 0;
     overflow: auto;
-    border: 1px solid red;
   }
   .right {
     height: 100%;

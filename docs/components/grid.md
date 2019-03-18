@@ -35,17 +35,17 @@ title:Grid
 
 ## 实现逻辑
 
-- col 使用 margin:0 gutter px
-- row 使用 margin:0 -gutter/2 px
-- 同时在 row 使用 flex-wrap:nowrap
-- offset 使用了 margin-left 来设置
-- 跨度样式使用了 SASS 的 forEach
+- `col`使用 `margin:0 gutter px`
+- `row` 使用 `margin:0 -gutter/2 px`
+- 同时在`row`使用 `flex-wrap:nowrap`
+- `offset` 使用了`margin-left` 来设置
+- 跨度样式使用了 `SASS` 的 `forEach`
 
-```angular2html
+```css
 $class-prefix: col-;
 @for $n from 1 through 24 {
-    &.#{$class-prefix}#{$n} {
-        width: ($n / 24) * 100%;
-    }
+  &.#{$class-prefix}#{$n} {
+    width: ($n / 24) * 100%;
+  }
 }
 ```

@@ -30,8 +30,8 @@ title:Toast
 
 ## 实现逻辑
 
-- 使用 plugin，用户使用 Vue.use(plugin)可以避免工程问题：1）挂在原型链名字重复；2）引用 Vue 版本不一致；
+- 使用 `plugin`，用户使用`Vue.use(plugin)`可以避免工程问题：1）挂在原型链名字重复；2）引用 Vue 版本不一致；
 
-- props 的属性的默认值不能是一个对象，但可以是一个函数返回一个对象
-- 假 slot:`<div v-html="$slots.default"></div>` 实现可以传 html 进入插槽
-- 如果眼睛看到的不为 0 ，而 JS 打出来是 0，一般就是异步的问题，解决方案尝试用 this.\$nextTick（()=>{}）加入到队列中
+- `props` 的属性的默认值不能是一个对象，但可以是一个函数返回一个对象
+- 假 `slot:<div v-html="$slots.default"></div>` 实现可以传 `html` 进入插槽
+- 如果眼睛看到的不为 0 ，而 JS 打出来是 0，一般就是异步的问题，解决方案尝试用`this.$nextTick（()=>{}）`加入到队列中

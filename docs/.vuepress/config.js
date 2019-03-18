@@ -14,7 +14,7 @@ module.exports = {
       },
       {
         text: '交流',
-        link: 'http://google.com'
+        link: 'https://github.com/lml1848687/Scorpio'
       },
     ],
     sidebar: [{
@@ -30,6 +30,11 @@ module.exports = {
           '/components/tabs',
           '/components/toast',
           '/components/layout',
+          './components/popover',
+          './components/slides',
+          './components/collapse',
+          './components/cascader',
+          './components/nav'
 
         ]
       }
